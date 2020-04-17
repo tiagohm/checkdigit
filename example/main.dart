@@ -6,4 +6,7 @@ void main() {
 
   print(verhoeff.validate('2363'));
   print(verhoeff.checkDigit('236') == 3);
+
+  print(verhoeff.validate('5724'));
+  print(verhoeff.checkDigit('572') == 4);
 }

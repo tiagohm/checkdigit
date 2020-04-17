@@ -14,6 +14,13 @@ int checkDigit = luhn.checkDigit('7992739871');
 ### [Verhoeff](https://en.wikipedia.org/wiki/Verhoeff_algorithm)
 
 ```dart
-bool isValid = luhn.validate('2363');
-int checkDigit = luhn.checkDigit('236');
+bool isValid = verhoeff.validate('2363');
+int checkDigit = verhoeff.checkDigit('236');
+```
+
+### [Damm](https://en.wikipedia.org/wiki/Damm_algorithm)
+
+```dart
+bool isValid = damm.validate('5724');
+int checkDigit = damm.checkDigit('572');
 ```

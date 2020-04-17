@@ -83,7 +83,7 @@ class Verhoeff {
   /// Validates the [data] integrity.
   /// It assumes that the check digit is appended at end of [data].
   bool validate(String data) {
-    if (data == null || data.isEmpty) {
+    if (data == null || data.length < 2) {
       return false;
     }
 
@@ -93,6 +93,10 @@ class Verhoeff {
 
   /// Computes the check digit from [data].
   int checkDigit(String data) {
+    if (data == null || data.isEmpty) {
+      throw ArgumentError('Must be not null or empty');
+    }
+
     final c = _compute(data, hasCheckDigit: false);
     return _inv[c];
   }

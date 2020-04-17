@@ -44,7 +44,7 @@ class Luhn {
     return sum;
   }
 
-  /// Validates the [data] integrity. 
+  /// Validates the [data] integrity.
   /// It assumes that the check digit is appended at end of [data].
   bool validate(String data) {
     if (data == null || data.length < 2) {
@@ -57,6 +57,10 @@ class Luhn {
 
   /// Computes the check digit from [data].
   int checkDigit(String data) {
+    if (data == null || data.isEmpty) {
+      throw ArgumentError('Must be not null and or empty');
+    }
+
     final sum = _sum(data, hasCheckDigit: false);
     return (sum * 9) % 10;
   }
