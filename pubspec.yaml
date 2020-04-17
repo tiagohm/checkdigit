@@ -1,0 +1,12 @@
+name: checksum
+description: A set of checksum algorithms for data integrity validation.
+version: 0.1.0
+homepage: https://github.com/tiagohm/checksum
+
+environment:
+  sdk: '>=2.7.0 <3.0.0'
+
+dependencies:
+
+dev_dependencies:
+  test: ^1.14.2
