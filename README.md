@@ -34,3 +34,10 @@ int checkDigit = isbn10.checkDigit('080442957');
 bool isValid = isbn13.validate('9783161484100');
 int checkDigit = isbn13.checkDigit('978316148410');
 ```
+
+### [ISIN](https://www.isin.org/education/)
+
+```dart
+bool isValid = isin.validate('US0378331005');
+int checkDigit = isin.checkDigit('US037833100');
+```

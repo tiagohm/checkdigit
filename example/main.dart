@@ -15,4 +15,7 @@ void main() {
 
   print(isbn10.validate('080442957X'));
   print(isbn10.checkDigit('080442957') == 10);
+
+  print(isin.validate('US0378331005'));
+  print(isin.checkDigit('US037833100') == 5);
 }
