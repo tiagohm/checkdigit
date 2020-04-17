@@ -1,3 +1,5 @@
+import 'checksum.dart';
+
 /// An instance of the default implementation of the [Damm].
 const damm = Damm();
 
@@ -15,7 +17,7 @@ const _table = [
 ];
 
 /// A class that implements the Damm checksum formula.
-class Damm {
+class Damm extends Checksum {
   ///
   const Damm();
 
@@ -39,8 +41,7 @@ class Damm {
     return interim;
   }
 
-  /// Validates the [data] integrity.
-  /// It assumes that the check digit is appended at end of [data].
+  @override
   bool validate(String data) {
     if (data == null || data.length < 2) {
       return false;
@@ -49,7 +50,7 @@ class Damm {
     return _compute(data) == 0;
   }
 
-  /// Computes the check digit from [data].
+  @override
   int checkDigit(String data) {
     if (data == null || data.isEmpty) {
       throw ArgumentError('Must be not null or empty');

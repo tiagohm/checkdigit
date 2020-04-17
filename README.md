@@ -24,3 +24,13 @@ int checkDigit = verhoeff.checkDigit('236');
 bool isValid = damm.validate('5724');
 int checkDigit = damm.checkDigit('572');
 ```
+
+### [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number#Check_digits)
+
+```dart
+bool isValid = isbn10.validate('080442957X');
+int checkDigit = isbn10.checkDigit('080442957');
+
+bool isValid = isbn13.validate('9783161484100');
+int checkDigit = isbn13.checkDigit('978316148410');
+```

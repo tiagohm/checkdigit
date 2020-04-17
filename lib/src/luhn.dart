@@ -1,13 +1,15 @@
+import 'checksum.dart';
+
 /// An instance of the default implementation of the [Luhn].
 const luhn = Luhn();
 
 /// A class that implements the Luhn checksum formula used to validate a
 /// variety of identification numbers, such as credit card numbers, IMEI numbers, etc.
-class Luhn {
+class Luhn extends Checksum {
   ///
   const Luhn();
 
-  static int _sum(
+  static int _compute(
     String data, {
     bool hasCheckDigit = true,
   }) {
@@ -44,24 +46,23 @@ class Luhn {
     return sum;
   }
 
-  /// Validates the [data] integrity.
-  /// It assumes that the check digit is appended at end of [data].
+  @override
   bool validate(String data) {
     if (data == null || data.length < 2) {
       return false;
     }
 
     // If the total modulo 10 is equal to 0 then the number is valid.
-    return _sum(data) % 10 == 0;
+    return _compute(data) % 10 == 0;
   }
 
-  /// Computes the check digit from [data].
+  @override
   int checkDigit(String data) {
     if (data == null || data.isEmpty) {
-      throw ArgumentError('Must be not null and or empty');
+      throw ArgumentError('Must be not null or empty');
     }
 
-    final sum = _sum(data, hasCheckDigit: false);
+    final sum = _compute(data, hasCheckDigit: false);
     return (sum * 9) % 10;
   }
 }
