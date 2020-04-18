@@ -1,4 +1,4 @@
-import 'checksum.dart';
+import 'package:checksum/checksum.dart';
 
 /// An instance of the default implementation of the [Damm].
 const damm = Damm();
