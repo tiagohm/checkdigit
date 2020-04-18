@@ -1,4 +1,4 @@
-import 'package:checksum/checksum.dart';
+import 'package:checkdigit/checkdigit.dart';
 
 /// An instance of the default implementation of the [Damm].
 const damm = Damm();
@@ -17,7 +17,7 @@ const _table = [
 ];
 
 /// A class that implements the Damm checksum formula.
-class Damm extends Checksum {
+class Damm extends Cda {
   ///
   const Damm();
 

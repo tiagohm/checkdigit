@@ -1,6 +1,6 @@
-library checksum;
+library checkdigit;
 
-export 'src/checksum.dart';
+export 'src/cda.dart';
 export 'src/cpf.dart';
 export 'src/damm.dart';
 export 'src/isbn.dart';

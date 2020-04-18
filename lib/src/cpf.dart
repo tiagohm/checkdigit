@@ -1,10 +1,10 @@
-import 'package:checksum/checksum.dart';
+import 'package:checkdigit/checkdigit.dart';
 
 /// An instance of the default implementation of the [Cpf].
 const cpf = Cpf();
 
-/// A class that implements the CPF (Cadastro de Pessoas Físicas) checksum formula.
-class Cpf extends Checksum {
+/// A class that implements the CPF (Cadastro de Pessoas Físicas) check digit algorithm.
+class Cpf extends Cda {
   ///
   const Cpf();
 
@@ -44,7 +44,7 @@ class Cpf extends Checksum {
 
       sum = (sum * 10) + digit;
     }
-    
+
     final dv = checkDigit(data.substring(0, 9));
 
     return dv == sum;

@@ -1,6 +1,6 @@
 # Checksum
 
-A set of checksum algorithms for data integrity validation.
+A set of check digit algorithms used for error detection on identification numbers.
 
 ## Algorithms
 
@@ -40,4 +40,11 @@ int checkDigit = isbn13.checkDigit('978316148410');
 ```dart
 bool isValid = isin.validate('US0378331005');
 int checkDigit = isin.checkDigit('US037833100');
+```
+
+### [CPF](https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas)
+
+```dart
+bool isValid = cpf.validate('11144477735');
+int checkDigit = cpf.checkDigit('111444777');
 ```

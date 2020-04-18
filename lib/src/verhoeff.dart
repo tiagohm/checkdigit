@@ -1,4 +1,4 @@
-import 'package:checksum/checksum.dart';
+import 'package:checkdigit/checkdigit.dart';
 
 /// An instance of the default implementation of the [Verhoeff].
 const verhoeff = Verhoeff();
@@ -52,7 +52,7 @@ const _p = [
 ];
 
 /// A class that implements the Verhoeff checksum formula.
-class Verhoeff extends Checksum {
+class Verhoeff extends Cda {
   ///
   const Verhoeff();
 

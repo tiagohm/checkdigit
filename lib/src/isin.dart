@@ -1,11 +1,11 @@
-import 'package:checksum/checksum.dart';
+import 'package:checkdigit/checkdigit.dart';
 
 /// An instance of the default implementation of the [Isin].
 const isin = Isin();
 
 /// A class that implements the ISIN (International Securities Identification Numbers)
 /// check digit algorithm.
-class Isin extends Checksum {
+class Isin extends Cda {
   ///
   const Isin();
 

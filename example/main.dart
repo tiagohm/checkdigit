@@ -1,4 +1,4 @@
-import 'package:checksum/checksum.dart';
+import 'package:checkdigit/checkdigit.dart';
 
 void main() {
   print(luhn.validate('79927398713'));
