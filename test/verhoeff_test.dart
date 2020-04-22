@@ -8,28 +8,28 @@ void main() {
   });
 
   test('Is Valid', () {
-    expect(verhoeff.validate('2363'), isTrue);
-    expect(verhoeff.validate('8050'), isTrue);
+    expect(verhoeff.validate('2363'), true);
+    expect(verhoeff.validate('8050'), true);
   });
 
   test('Is Not Valid', () {
-    expect(verhoeff.validate('2360'), isFalse);
+    expect(verhoeff.validate('2360'), false);
   });
 
   test('Invalid Input', () {
     expect(() => verhoeff.validate('805O'), throwsA(isA<ArgumentError>()));
     expect(() => verhoeff.checkDigit(''), throwsA(isA<ArgumentError>()));
     expect(() => verhoeff.checkDigit(null), throwsA(isA<ArgumentError>()));
-    expect(verhoeff.validate(''), isFalse);
-    expect(verhoeff.validate(null), isFalse);
-    expect(verhoeff.validate('0'), isFalse);
+    expect(verhoeff.validate(''), false);
+    expect(verhoeff.validate(null), false);
+    expect(verhoeff.validate('0'), false);
   });
 
   test('Obtaining Check Digit & Validating', () {
     for (var i = 0; i < 1000; i++) {
       final n = i.toString().padLeft(3, '0');
       final cd = verhoeff.checkDigit(n);
-      expect(verhoeff.validate('$n$cd'), isTrue);
+      expect(verhoeff.validate('$n$cd'), true);
     }
   });
 }

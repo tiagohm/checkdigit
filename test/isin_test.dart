@@ -7,27 +7,27 @@ void main() {
   });
 
   test('Is Valid', () {
-    expect(isin.validate('US0378331005'), isTrue);
+    expect(isin.validate('US0378331005'), true);
   });
 
   test('Is Not Valid', () {
-    expect(isin.validate('US0378331004'), isFalse);
+    expect(isin.validate('US0378331004'), false);
   });
 
   test('Invalid Input', () {
     expect(() => isin.validate('US0378331*05'), throwsA(isA<ArgumentError>()));
     expect(() => isin.checkDigit(''), throwsA(isA<ArgumentError>()));
     expect(() => isin.checkDigit(null), throwsA(isA<ArgumentError>()));
-    expect(isin.validate(''), isFalse);
-    expect(isin.validate(null), isFalse);
-    expect(isin.validate('0'), isFalse);
+    expect(isin.validate(''), false);
+    expect(isin.validate(null), false);
+    expect(isin.validate('0'), false);
   });
 
   test('Obtaining Check Digit & Validating', () {
     for (var i = 0; i < 999; i++) {
       final n = 'US${i.toString().padLeft(3, '0')}';
       final cd = isin.checkDigit(n);
-      expect(isin.validate('$n$cd'), isTrue);
+      expect(isin.validate('$n$cd'), true);
     }
   });
 }

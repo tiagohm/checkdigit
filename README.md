@@ -48,3 +48,10 @@ int checkDigit = isin.checkDigit('US037833100');
 bool isValid = cpf.validate('11144477735');
 int checkDigit = cpf.checkDigit('111444777');
 ```
+
+### [IBAN](https://en.wikipedia.org/wiki/International_Bank_Account_Number)
+
+```dart
+bool isValid = cpf.validate('GB82WEST12345698765432');
+int checkDigit = cpf.checkDigit('GB00WEST12345698765432');
+```

@@ -1,11 +1,11 @@
-import 'package:checkdigit/checkdigit.dart';
+import 'package:checkdigit/src/checkdigit.dart';
 
 /// An instance of the default implementation of the [Luhn].
 const luhn = Luhn();
 
 /// A class that implements the Luhn checksum formula used to validate a
 /// variety of identification numbers, such as credit card numbers, IMEI numbers, etc.
-class Luhn extends Cda {
+class Luhn extends CheckDigit {
   ///
   const Luhn();
 

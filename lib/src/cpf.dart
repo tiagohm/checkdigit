@@ -1,10 +1,10 @@
-import 'package:checkdigit/checkdigit.dart';
+import 'package:checkdigit/src/checkdigit.dart';
 
 /// An instance of the default implementation of the [Cpf].
 const cpf = Cpf();
 
 /// A class that implements the CPF (Cadastro de Pessoas Físicas) check digit algorithm.
-class Cpf extends Cda {
+class Cpf extends CheckDigit {
   ///
   const Cpf();
 

@@ -18,4 +18,10 @@ void main() {
 
   print(isin.validate('US0378331005'));
   print(isin.checkDigit('US037833100') == 5);
+
+  print(cpf.validate('11144477735'));
+  print(cpf.checkDigit('111444777') == 35);
+
+  print(iban.validate('GB82WEST12345698765432'));
+  print(iban.checkDigit('GB00WEST12345698765432') == 82);
 }

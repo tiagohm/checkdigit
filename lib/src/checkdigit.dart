@@ -1,7 +1,7 @@
 /// An abstract class for check digit algorithms implementation.
-abstract class Cda {
+abstract class CheckDigit {
   ///
-  const Cda();
+  const CheckDigit();
 
   /// Validates the [data] integrity.
   /// It assumes that the check digit is appended at end of [data].

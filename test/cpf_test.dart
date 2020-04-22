@@ -10,15 +10,15 @@ void main() {
   });
 
   test('Is Valid', () {
-    expect(cpf.validate('11144477735'), isTrue);
-    expect(cpf.validate('36636384050'), isTrue);
-    expect(cpf.validate('45485053009'), isTrue);
+    expect(cpf.validate('11144477735'), true);
+    expect(cpf.validate('36636384050'), true);
+    expect(cpf.validate('45485053009'), true);
   });
 
   test('Is Not Valid', () {
-    expect(cpf.validate('11144477736'), isFalse);
-    expect(cpf.validate('36636384051'), isFalse);
-    expect(cpf.validate('45485053000'), isFalse);
+    expect(cpf.validate('11144477736'), false);
+    expect(cpf.validate('36636384051'), false);
+    expect(cpf.validate('45485053000'), false);
   });
 
   test('Invalid Input', () {
@@ -26,16 +26,16 @@ void main() {
     expect(() => cpf.validate('4548505300O'), throwsA(isA<ArgumentError>()));
     expect(() => cpf.checkDigit(''), throwsA(isA<ArgumentError>()));
     expect(() => cpf.checkDigit(null), throwsA(isA<ArgumentError>()));
-    expect(cpf.validate(''), isFalse);
-    expect(cpf.validate(null), isFalse);
-    expect(cpf.validate('0'), isFalse);
+    expect(cpf.validate(''), false);
+    expect(cpf.validate(null), false);
+    expect(cpf.validate('0'), false);
   });
 
   test('Obtaining Check Digit & Validating', () {
     for (var i = 0; i < 1000; i++) {
       final n = '111111${i.toString().padLeft(3, '0')}';
       final cd = cpf.checkDigit(n).toString().padLeft(2, '0');
-      expect(cpf.validate('$n$cd'), isTrue);
+      expect(cpf.validate('$n$cd'), true);
     }
   });
 }

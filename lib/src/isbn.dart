@@ -1,10 +1,10 @@
-import 'package:checkdigit/checkdigit.dart';
+import 'package:checkdigit/src/checkdigit.dart';
 
 /// An instance of the default implementation of the [Isbn10].
 const isbn10 = Isbn10();
 
 /// A class that implements the ISBN-10 check digit algorithm.
-class Isbn10 extends Cda {
+class Isbn10 extends CheckDigit {
   ///
   const Isbn10();
 
@@ -54,7 +54,7 @@ class Isbn10 extends Cda {
 const isbn13 = Isbn13();
 
 /// A class that implements the ISBN-13 check digit algorithm.
-class Isbn13 extends Cda {
+class Isbn13 extends CheckDigit {
   ///
   const Isbn13();
 

@@ -17,20 +17,20 @@ void main() {
     });
 
     test('Is Valid', () {
-      expect(isbn10.validate('0306406152'), isTrue);
-      expect(isbn10.validate('9992158107'), isTrue);
-      expect(isbn10.validate('9971502100'), isTrue);
-      expect(isbn10.validate('9726629055'), isTrue);
-      expect(isbn10.validate('8535902775'), isTrue);
-      expect(isbn10.validate('0684843285'), isTrue);
-      expect(isbn10.validate('080442957X'), isTrue);
-      expect(isbn10.validate('0851310419'), isTrue);
-      expect(isbn10.validate('0943396042'), isTrue);
-      expect(isbn10.validate('097522980X'), isTrue);
+      expect(isbn10.validate('0306406152'), true);
+      expect(isbn10.validate('9992158107'), true);
+      expect(isbn10.validate('9971502100'), true);
+      expect(isbn10.validate('9726629055'), true);
+      expect(isbn10.validate('8535902775'), true);
+      expect(isbn10.validate('0684843285'), true);
+      expect(isbn10.validate('080442957X'), true);
+      expect(isbn10.validate('0851310419'), true);
+      expect(isbn10.validate('0943396042'), true);
+      expect(isbn10.validate('097522980X'), true);
     });
 
     test('Is Not Valid', () {
-      expect(isbn10.validate('0306406150'), isFalse);
+      expect(isbn10.validate('0306406150'), false);
     });
 
     test('Invalid Input', () {
@@ -38,16 +38,16 @@ void main() {
           () => isbn10.validate('03064O6152'), throwsA(isA<ArgumentError>()));
       expect(() => isbn10.checkDigit(''), throwsA(isA<ArgumentError>()));
       expect(() => isbn10.checkDigit(null), throwsA(isA<ArgumentError>()));
-      expect(isbn10.validate(''), isFalse);
-      expect(isbn10.validate(null), isFalse);
-      expect(isbn10.validate('0'), isFalse);
+      expect(isbn10.validate(''), false);
+      expect(isbn10.validate(null), false);
+      expect(isbn10.validate('0'), false);
     });
 
     test('Obtaining Check Digit & Validating', () {
       for (var i = 100000000; i < 100000999; i++) {
         final n = i.toString();
         final cd = isbn10.checkDigit(n);
-        expect(isbn10.validate('$n${cd == 10 ? 'X' : cd}'), isTrue);
+        expect(isbn10.validate('$n${cd == 10 ? 'X' : cd}'), true);
       }
     });
   });
@@ -59,12 +59,12 @@ void main() {
     });
 
     test('Is Valid', () {
-      expect(isbn13.validate('9780306406157'), isTrue);
-      expect(isbn13.validate('9783161484100'), isTrue);
+      expect(isbn13.validate('9780306406157'), true);
+      expect(isbn13.validate('9783161484100'), true);
     });
 
     test('Is Not Valid', () {
-      expect(isbn13.validate('9780306406156'), isFalse);
+      expect(isbn13.validate('9780306406156'), false);
     });
 
     test('Invalid Input', () {
@@ -72,16 +72,16 @@ void main() {
           throwsA(isA<ArgumentError>()));
       expect(() => isbn13.checkDigit(''), throwsA(isA<ArgumentError>()));
       expect(() => isbn13.checkDigit(null), throwsA(isA<ArgumentError>()));
-      expect(isbn13.validate(''), isFalse);
-      expect(isbn13.validate(null), isFalse);
-      expect(isbn13.validate('0'), isFalse);
+      expect(isbn13.validate(''), false);
+      expect(isbn13.validate(null), false);
+      expect(isbn13.validate('0'), false);
     });
 
     test('Obtaining Check Digit & Validating', () {
       for (var i = 100000000000; i < 100000000999; i++) {
         final n = i.toString();
         final cd = isbn13.checkDigit(n);
-        expect(isbn13.validate('$n$cd'), isTrue);
+        expect(isbn13.validate('$n$cd'), true);
       }
     });
   });
