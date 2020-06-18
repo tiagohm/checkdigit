@@ -1,12 +1,13 @@
-name: checksum
-description: A set of checksum algorithms for data integrity validation.
+name: checkdigit
+description: A set of check digit algorithms used for error detection on identification numbers.
 version: 0.1.0
-homepage: https://github.com/tiagohm/checksum
+homepage: https://github.com/tiagohm/checkdigit
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: ">=2.8.0 <3.0.0"
 
-dependencies:
+# dependencies:
 
 dev_dependencies:
-  test: ^1.14.2
+  test: ^1.15.0
+  effective_dart: ^1.2.3
