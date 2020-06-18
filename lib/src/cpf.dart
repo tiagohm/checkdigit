@@ -1,10 +1,11 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Cpf].
 const cpf = Cpf();
 
-/// A class that implements the CPF (Cadastro de Pessoas Físicas) check digit algorithm.
-class Cpf extends CheckDigit {
+/// A class that implements the CPF (Cadastro de Pessoas Físicas)
+/// check digit algorithm.
+class Cpf extends CheckDigit<int> {
   ///
   const Cpf();
 
@@ -53,7 +54,7 @@ class Cpf extends CheckDigit {
   @override
   int checkDigit(String data) {
     if (data == null || data.length != 9) {
-      throw ArgumentError('Must be not null and must contain 9 digits');
+      throw ArgumentError('Must not be null and must contain 9 digits');
     }
 
     final sum1 = _compute(data, factor: 10);

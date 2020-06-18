@@ -1,11 +1,12 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Luhn].
 const luhn = Luhn();
 
 /// A class that implements the Luhn checksum formula used to validate a
-/// variety of identification numbers, such as credit card numbers, IMEI numbers, etc.
-class Luhn extends CheckDigit {
+/// variety of identification numbers, such as credit card numbers, 
+/// IMEI numbers, etc.
+class Luhn extends CheckDigit<int> {
   ///
   const Luhn();
 
@@ -24,14 +25,17 @@ class Luhn extends CheckDigit {
         throw ArgumentError('Digit at index $i must be a number');
       }
 
-      // The first digit doubled is the digit located immediately left of the check digit.
+      // The first digit doubled is the digit located 
+      // immediately left of the check digit.
       if (isDouble) {
         final doubledDigit = digit * 2;
         // 2. Take the sum of all the digits.
-        // If the result of this doubling operation is greater than 9 (e.g., 8 × 2 = 16),
+        // If the result of this doubling operation 
+        // is greater than 9 (e.g., 8 × 2 = 16),
         // then add the digits of the result.
         if (doubledDigit > 9) {
-          sum += doubledDigit ~/ 10 + doubledDigit % 10;
+          // sum += doubledDigit ~/ 10 + doubledDigit % 10;
+          sum += doubledDigit - 9;
         } else {
           sum += doubledDigit;
         }
@@ -59,7 +63,7 @@ class Luhn extends CheckDigit {
   @override
   int checkDigit(String data) {
     if (data == null || data.isEmpty) {
-      throw ArgumentError('Must be not null or empty');
+      throw ArgumentError('Must not be null or empty');
     }
 
     final sum = _compute(data, hasCheckDigit: false);

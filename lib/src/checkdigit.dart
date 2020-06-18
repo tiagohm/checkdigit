@@ -1,5 +1,5 @@
 /// An abstract class for check digit algorithms implementation.
-abstract class CheckDigit {
+abstract class CheckDigit<T> {
   ///
   const CheckDigit();
 
@@ -8,5 +8,5 @@ abstract class CheckDigit {
   bool validate(String data);
 
   /// Computes the check digit from [data].
-  int checkDigit(String data);
+  T checkDigit(String data);
 }

@@ -1,10 +1,11 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Iban].
 const iban = Iban();
 
-/// A class that implements the IBAN (International Bank Account Number) check digit algorithm.
-class Iban extends CheckDigit {
+/// A class that implements the IBAN (International Bank Account Number)
+/// check digit algorithm.
+class Iban extends CheckDigit<int> {
   ///
   const Iban();
 
@@ -56,7 +57,7 @@ class Iban extends CheckDigit {
   int checkDigit(String data) {
     if (data == null || data.length < 5) {
       throw ArgumentError(
-        'Must be not null and must contain at least 5 digits',
+        'Must not be null and must contain at least 5 digits',
       );
     }
 

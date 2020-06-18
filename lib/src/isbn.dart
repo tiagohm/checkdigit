@@ -1,10 +1,10 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Isbn10].
 const isbn10 = Isbn10();
 
 /// A class that implements the ISBN-10 check digit algorithm.
-class Isbn10 extends CheckDigit {
+class Isbn10 extends CheckDigit<int> {
   ///
   const Isbn10();
 
@@ -43,7 +43,7 @@ class Isbn10 extends CheckDigit {
   @override
   int checkDigit(String data) {
     if (data == null || data.length != 9) {
-      throw ArgumentError('Must be not null and must contain 9 digits');
+      throw ArgumentError('Must not be null and must contain 9 digits');
     }
 
     return (11 - (_compute(data) % 11)) % 11;
@@ -93,7 +93,7 @@ class Isbn13 extends CheckDigit {
   @override
   int checkDigit(String data) {
     if (data == null || data.length != 12) {
-      throw ArgumentError('Must be not null and must contain 12 digits');
+      throw ArgumentError('Must not be null and must contain 12 digits');
     }
 
     return (10 - (_compute(data) % 10)) % 10;

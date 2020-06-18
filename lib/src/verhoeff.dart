@@ -1,11 +1,12 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Verhoeff].
 const verhoeff = Verhoeff();
 
 // d(j,k)
 //This table is based on multiplication in the dihedral group D5
-// and is simply the Cayley table of the group. Note that this group is not commutative,
+// and is simply the Cayley table of the group. 
+// Note that this group is not commutative,
 // that is, for some values of j and k, d(j,k) != d(k, j).
 const _d = [
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -21,8 +22,8 @@ const _d = [
 ];
 
 // inv(j)
-// The inverse table inv represents the multiplicative inverse of a digit, that is,
-// the value that satisfies d(j, inv(j)) = 0.
+// The inverse table inv represents the multiplicative inverse of a digit, 
+// that is, the value that satisfies d(j, inv(j)) = 0.
 const _inv = [
   0,
   4,
@@ -37,8 +38,9 @@ const _inv = [
 ];
 
 // p(pos,num)
-// The permutation table p applies a permutation to each digit based on its position
-// in the number. This is actually a single permutation (1 5 8 9 4 2 7 0)(3 6)
+// The permutation table p applies a permutation to each digit based 
+// on its position in the number.
+// This is actually a single permutation (1 5 8 9 4 2 7 0)(3 6)
 // applied iteratively; i.e. p(i+j,n) = p(i, p(j,n)).
 const _p = [
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -52,7 +54,7 @@ const _p = [
 ];
 
 /// A class that implements the Verhoeff checksum formula.
-class Verhoeff extends CheckDigit {
+class Verhoeff extends CheckDigit<int> {
   ///
   const Verhoeff();
 
@@ -95,7 +97,7 @@ class Verhoeff extends CheckDigit {
   @override
   int checkDigit(String data) {
     if (data == null || data.isEmpty) {
-      throw ArgumentError('Must be not null or empty');
+      throw ArgumentError('Must not be null or empty');
     }
 
     final c = _compute(data, hasCheckDigit: false);

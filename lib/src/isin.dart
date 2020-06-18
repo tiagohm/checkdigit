@@ -1,11 +1,11 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Isin].
 const isin = Isin();
 
-/// A class that implements the ISIN (International Securities Identification Numbers)
-/// check digit algorithm.
-class Isin extends CheckDigit {
+/// A class that implements the ISIN 
+/// (International Securities Identification Numbers) check digit algorithm.
+class Isin extends CheckDigit<int> {
   ///
   const Isin();
 
@@ -37,7 +37,8 @@ class Isin extends CheckDigit {
         final value = digits[i] * 2;
 
         if (value > 9) {
-          sum += (value ~/ 10) + (value % 10);
+          // sum += (value ~/ 10) + (value % 10);
+          sum += value - 9;
         } else {
           sum += value;
         }
@@ -64,7 +65,7 @@ class Isin extends CheckDigit {
   int checkDigit(String data) {
     if (data == null || data.length < 4) {
       throw ArgumentError(
-        'Must be not null and must contain at least 4 digits',
+        'Must not be null and must contain at least 4 digits',
       );
     }
 

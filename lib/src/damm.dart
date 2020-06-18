@@ -1,4 +1,4 @@
-import 'package:checkdigit/src/checkdigit.dart';
+import 'checkdigit.dart';
 
 /// An instance of the default implementation of the [Damm].
 const damm = Damm();
@@ -17,7 +17,7 @@ const _table = [
 ];
 
 /// A class that implements the Damm checksum formula.
-class Damm extends CheckDigit {
+class Damm extends CheckDigit<int> {
   ///
   const Damm();
 
@@ -26,8 +26,8 @@ class Damm extends CheckDigit {
     var interim = 0;
 
     // 2. Process the number digit by digit:
-    // Use the number's digit as column index and the interim digit as row index,
-    // take the table entry and replace the interim digit with it.
+    // Use the number's digit as column index and the interim digit as 
+    // row index, take the table entry and replace the interim digit with it.
     for (var i = 0; i < data.length; i++) {
       final digit = data.codeUnitAt(i) - 48;
 
@@ -53,7 +53,7 @@ class Damm extends CheckDigit {
   @override
   int checkDigit(String data) {
     if (data == null || data.isEmpty) {
-      throw ArgumentError('Must be not null or empty');
+      throw ArgumentError('Must not be null or empty');
     }
 
     return _compute(data);

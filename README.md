@@ -2,6 +2,15 @@
 
 A set of check digit algorithms used for error detection on identification numbers.
 
+## Installation
+
+In `pubspec.yaml` add the following dependency:
+
+```yaml
+dependencies:
+  checkdigit: ^0.1.0
+```
+
 ## Algorithms
 
 ### [Luhn](https://en.wikipedia.org/wiki/Luhn_algorithm)
@@ -52,6 +61,6 @@ int checkDigit = cpf.checkDigit('111444777');
 ### [IBAN](https://en.wikipedia.org/wiki/International_Bank_Account_Number)
 
 ```dart
-bool isValid = cpf.validate('GB82WEST12345698765432');
-int checkDigit = cpf.checkDigit('GB00WEST12345698765432');
+bool isValid = iban.validate('GB82WEST12345698765432');
+int checkDigit = iban.checkDigit('GB00WEST12345698765432');
 ```
