@@ -44,10 +44,11 @@ String checkDigitAsString = damm.checkDigitAsString('572');
 ### [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number#Check_digits)
 
 ```dart
+// ISBN-10.
 bool isValid = isbn10.validate('080442957X');
 int checkDigit = isbn10.checkDigit('080442957');
 String checkDigitAsString = isbn10.checkDigitAsString('080442957');
-
+// ISBN-13.
 bool isValid = isbn13.validate('9783161484100');
 int checkDigit = isbn13.checkDigit('978316148410');
 String checkDigitAsString = isbn13.checkDigitAsString('978316148410');
@@ -83,4 +84,21 @@ String checkDigitAsString = iban.checkDigitAsString('GB00WEST12345698765432');
 bool isValid = cnpj.validate('11222333000181');
 int checkDigit = cnpj.checkDigit('112223330001');
 String checkDigitAsString = cnpj.checkDigitAsString('112223330001');
+```
+
+### [EAN-X](https://en.wikipedia.org/wiki/International_Article_Number)
+
+```dart
+// EAN-13.
+bool isValid = ean13.validate('4006381333931');
+int checkDigit = ean13.checkDigit('400638133393');
+String checkDigitAsString = ean13.checkDigitAsString('400638133393');
+// UPC-A.
+bool isValid = upcA.validate('036000291452');
+int checkDigit = upcA.checkDigit('03600029145');
+String checkDigitAsString = upcA.checkDigitAsString('03600029145');
+// EAN-8.
+bool isValid = ean8.validate('73513537');
+int checkDigit = ean8.checkDigit('7351353');
+String checkDigitAsString = ean8.checkDigitAsString('7351353');
 ```
