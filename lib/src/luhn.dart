@@ -4,7 +4,7 @@ import 'checkdigit.dart';
 const luhn = Luhn();
 
 /// A class that implements the Luhn checksum formula used to validate a
-/// variety of identification numbers, such as credit card numbers, 
+/// variety of identification numbers, such as credit card numbers,
 /// IMEI numbers, etc.
 class Luhn extends CheckDigit<int> {
   ///
@@ -25,12 +25,12 @@ class Luhn extends CheckDigit<int> {
         throw ArgumentError('Digit at index $i must be a number');
       }
 
-      // The first digit doubled is the digit located 
+      // The first digit doubled is the digit located
       // immediately left of the check digit.
       if (isDouble) {
         final doubledDigit = digit * 2;
         // 2. Take the sum of all the digits.
-        // If the result of this doubling operation 
+        // If the result of this doubling operation
         // is greater than 9 (e.g., 8 × 2 = 16),
         // then add the digits of the result.
         if (doubledDigit > 9) {
@@ -68,5 +68,10 @@ class Luhn extends CheckDigit<int> {
 
     final sum = _compute(data, hasCheckDigit: false);
     return (sum * 9) % 10;
+  }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}';
   }
 }

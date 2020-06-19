@@ -67,4 +67,9 @@ class Iban extends CheckDigit<int> {
 
     return 98 - sum;
   }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}'.padLeft(2, '0');
+  }
 }

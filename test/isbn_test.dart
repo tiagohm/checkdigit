@@ -16,6 +16,19 @@ void main() {
       expect(isbn10.checkDigit('097522980'), 10);
     });
 
+    test('Check Digit As String', () {
+      expect(isbn10.checkDigitAsString('030640615'), '2');
+      expect(isbn10.checkDigitAsString('999215810'), '7');
+      expect(isbn10.checkDigitAsString('997150210'), '0');
+      expect(isbn10.checkDigitAsString('972662905'), '5');
+      expect(isbn10.checkDigitAsString('853590277'), '5');
+      expect(isbn10.checkDigitAsString('068484328'), '5');
+      expect(isbn10.checkDigitAsString('080442957'), 'X');
+      expect(isbn10.checkDigitAsString('085131041'), '9');
+      expect(isbn10.checkDigitAsString('094339604'), '2');
+      expect(isbn10.checkDigitAsString('097522980'), 'X');
+    });
+
     test('Is Valid', () {
       expect(isbn10.validate('0306406152'), true);
       expect(isbn10.validate('9992158107'), true);
@@ -56,6 +69,11 @@ void main() {
     test('Check Digit', () {
       expect(isbn13.checkDigit('978030640615'), 7);
       expect(isbn13.checkDigit('978316148410'), 0);
+    });
+
+    test('Check Digit As String', () {
+      expect(isbn13.checkDigitAsString('978030640615'), '7');
+      expect(isbn13.checkDigitAsString('978316148410'), '0');
     });
 
     test('Is Valid', () {

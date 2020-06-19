@@ -26,7 +26,7 @@ class Damm extends CheckDigit<int> {
     var interim = 0;
 
     // 2. Process the number digit by digit:
-    // Use the number's digit as column index and the interim digit as 
+    // Use the number's digit as column index and the interim digit as
     // row index, take the table entry and replace the interim digit with it.
     for (var i = 0; i < data.length; i++) {
       final digit = data.codeUnitAt(i) - 48;
@@ -57,5 +57,10 @@ class Damm extends CheckDigit<int> {
     }
 
     return _compute(data);
+  }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}';
   }
 }

@@ -9,4 +9,7 @@ abstract class CheckDigit<T> {
 
   /// Computes the check digit from [data].
   T checkDigit(String data);
+
+  /// Computes the check digit from [data] as [String].
+  String checkDigitAsString(String data);
 }

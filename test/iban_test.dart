@@ -7,6 +7,11 @@ void main() {
     expect(iban.checkDigit('GB00WEST12345698765432'), 82);
   });
 
+  test('Check Digit As String', () {
+    expect(iban.checkDigitAsString('GB82WEST12345698765432'), '82');
+    expect(iban.checkDigitAsString('GB00WEST12345698765432'), '82');
+  });
+
   test('Is Valid', () {
     expect(iban.validate('GB82WEST12345698765432'), true);
   });

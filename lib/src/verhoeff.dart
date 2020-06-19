@@ -5,7 +5,7 @@ const verhoeff = Verhoeff();
 
 // d(j,k)
 //This table is based on multiplication in the dihedral group D5
-// and is simply the Cayley table of the group. 
+// and is simply the Cayley table of the group.
 // Note that this group is not commutative,
 // that is, for some values of j and k, d(j,k) != d(k, j).
 const _d = [
@@ -22,7 +22,7 @@ const _d = [
 ];
 
 // inv(j)
-// The inverse table inv represents the multiplicative inverse of a digit, 
+// The inverse table inv represents the multiplicative inverse of a digit,
 // that is, the value that satisfies d(j, inv(j)) = 0.
 const _inv = [
   0,
@@ -38,7 +38,7 @@ const _inv = [
 ];
 
 // p(pos,num)
-// The permutation table p applies a permutation to each digit based 
+// The permutation table p applies a permutation to each digit based
 // on its position in the number.
 // This is actually a single permutation (1 5 8 9 4 2 7 0)(3 6)
 // applied iteratively; i.e. p(i+j,n) = p(i, p(j,n)).
@@ -102,5 +102,10 @@ class Verhoeff extends CheckDigit<int> {
 
     final c = _compute(data, hasCheckDigit: false);
     return _inv[c];
+  }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}';
   }
 }

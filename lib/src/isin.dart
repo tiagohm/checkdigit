@@ -3,7 +3,7 @@ import 'checkdigit.dart';
 /// An instance of the default implementation of the [Isin].
 const isin = Isin();
 
-/// A class that implements the ISIN 
+/// A class that implements the ISIN
 /// (International Securities Identification Numbers) check digit algorithm.
 class Isin extends CheckDigit<int> {
   ///
@@ -71,5 +71,10 @@ class Isin extends CheckDigit<int> {
 
     final sum = _compute(data, hasCheckDigit: false);
     return ((sum / 10).ceil() * 10) - sum;
+  }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}';
   }
 }

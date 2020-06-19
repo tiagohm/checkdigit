@@ -6,6 +6,10 @@ void main() {
     expect(isin.checkDigit('US037833100'), 5);
   });
 
+  test('Check Digit As String', () {
+    expect(isin.checkDigitAsString('US037833100'), '5');
+  });
+
   test('Is Valid', () {
     expect(isin.validate('US0378331005'), true);
   });

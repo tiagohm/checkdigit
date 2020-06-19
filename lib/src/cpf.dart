@@ -67,4 +67,9 @@ class Cpf extends CheckDigit<int> {
 
     return v1 * 10 + v2;
   }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}'.padLeft(2, '0');
+  }
 }

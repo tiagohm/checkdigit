@@ -48,6 +48,12 @@ class Isbn10 extends CheckDigit<int> {
 
     return (11 - (_compute(data) % 11)) % 11;
   }
+
+  @override
+  String checkDigitAsString(String data) {
+    final digit = checkDigit(data);
+    return digit == 10 ? 'X' : '$digit';
+  }
 }
 
 /// An instance of the default implementation of the [Isbn13].
@@ -97,5 +103,10 @@ class Isbn13 extends CheckDigit {
     }
 
     return (10 - (_compute(data) % 10)) % 10;
+  }
+
+  @override
+  String checkDigitAsString(String data) {
+    return '${checkDigit(data)}';
   }
 }

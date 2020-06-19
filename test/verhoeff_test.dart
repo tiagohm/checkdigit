@@ -7,6 +7,11 @@ void main() {
     expect(verhoeff.checkDigit('805'), 0);
   });
 
+  test('Check Digit As String', () {
+    expect(verhoeff.checkDigitAsString('236'), '3');
+    expect(verhoeff.checkDigitAsString('805'), '0');
+  });
+
   test('Is Valid', () {
     expect(verhoeff.validate('2363'), true);
     expect(verhoeff.validate('8050'), true);

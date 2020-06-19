@@ -9,6 +9,13 @@ void main() {
     expect(cpf.checkDigit('830004230'), 01);
   });
 
+  test('Check Digit As String', () {
+    expect(cpf.checkDigitAsString('111444777'), '35');
+    expect(cpf.checkDigitAsString('366363840'), '50');
+    expect(cpf.checkDigitAsString('454850530'), '09');
+    expect(cpf.checkDigitAsString('830004230'), '01');
+  });
+
   test('Is Valid', () {
     expect(cpf.validate('11144477735'), true);
     expect(cpf.validate('36636384050'), true);

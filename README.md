@@ -1,4 +1,8 @@
-# Checksum
+# Checkdigit
+
+[![Star on GitHub](https://img.shields.io/github/stars/tiagohm/checkdigit.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/tiagohm/checkdigit)
+[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
+[![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 A set of check digit algorithms used for error detection on identification numbers.
 
@@ -18,6 +22,7 @@ dependencies:
 ```dart
 bool isValid = luhn.validate('79927398713');
 int checkDigit = luhn.checkDigit('7992739871');
+String checkDigitAsString = luhn.checkDigitAsString('7992739871');
 ```
 
 ### [Verhoeff](https://en.wikipedia.org/wiki/Verhoeff_algorithm)
@@ -25,6 +30,7 @@ int checkDigit = luhn.checkDigit('7992739871');
 ```dart
 bool isValid = verhoeff.validate('2363');
 int checkDigit = verhoeff.checkDigit('236');
+String checkDigitAsString = verhoeff.checkDigitAsString('236');
 ```
 
 ### [Damm](https://en.wikipedia.org/wiki/Damm_algorithm)
@@ -32,6 +38,7 @@ int checkDigit = verhoeff.checkDigit('236');
 ```dart
 bool isValid = damm.validate('5724');
 int checkDigit = damm.checkDigit('572');
+String checkDigitAsString = damm.checkDigitAsString('572');
 ```
 
 ### [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number#Check_digits)
@@ -39,9 +46,11 @@ int checkDigit = damm.checkDigit('572');
 ```dart
 bool isValid = isbn10.validate('080442957X');
 int checkDigit = isbn10.checkDigit('080442957');
+String checkDigitAsString = isbn10.checkDigitAsString('080442957');
 
 bool isValid = isbn13.validate('9783161484100');
 int checkDigit = isbn13.checkDigit('978316148410');
+String checkDigitAsString = isbn13.checkDigitAsString('978316148410');
 ```
 
 ### [ISIN](https://www.isin.org/education/)
@@ -49,6 +58,7 @@ int checkDigit = isbn13.checkDigit('978316148410');
 ```dart
 bool isValid = isin.validate('US0378331005');
 int checkDigit = isin.checkDigit('US037833100');
+String checkDigitAsString = isin.checkDigitAsString('US037833100');
 ```
 
 ### [CPF](https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas)
@@ -56,6 +66,7 @@ int checkDigit = isin.checkDigit('US037833100');
 ```dart
 bool isValid = cpf.validate('11144477735');
 int checkDigit = cpf.checkDigit('111444777');
+String checkDigitAsString = cpf.checkDigitAsString('111444777');
 ```
 
 ### [IBAN](https://en.wikipedia.org/wiki/International_Bank_Account_Number)
@@ -63,4 +74,5 @@ int checkDigit = cpf.checkDigit('111444777');
 ```dart
 bool isValid = iban.validate('GB82WEST12345698765432');
 int checkDigit = iban.checkDigit('GB00WEST12345698765432');
+String checkDigitAsString = iban.checkDigitAsString('GB00WEST12345698765432');
 ```

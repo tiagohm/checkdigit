@@ -6,6 +6,10 @@ void main() {
     expect(damm.checkDigit('572'), 4);
   });
 
+  test('Check Digit As String', () {
+    expect(damm.checkDigitAsString('572'), '4');
+  });
+
   test('Is Valid', () {
     expect(damm.validate('5724'), true);
   });

@@ -7,6 +7,11 @@ void main() {
     expect(luhn.checkDigit('7992789891'), 0);
   });
 
+  test('Check Digit As String', () {
+    expect(luhn.checkDigitAsString('7992739871'), '3');
+    expect(luhn.checkDigitAsString('7992789891'), '0');
+  });
+
   test('Is Valid', () {
     expect(luhn.validate('79927398713'), true);
     expect(luhn.validate('79927898910'), true);
