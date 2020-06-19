@@ -57,11 +57,6 @@ class Isbn10 extends CheckDigit<int> {
   }
 }
 
-/// An instance of the default implementation of the [Isbn13].
-const isbn13 = Isbn13();
-
-/// A class that implements the ISBN-13 check digit algorithm.
-class Isbn13 extends Ean {
-  ///
-  const Isbn13() : super(13);
-}
+/// An instance of the default implementation of the ISBN-13
+/// check digit algorithm.
+const isbn13 = Ean(13);
