@@ -34,21 +34,13 @@ class Cpf extends CheckDigit<int> {
       return false;
     }
 
-    var sum = 0;
+    final dv = int.tryParse(data.substring(9, 11));
 
-    for (var i = 9; i <= 10; i++) {
-      final digit = data.codeUnitAt(i) - 48;
-
-      if (digit < 0 || digit > 9) {
-        throw ArgumentError('Digit at index $i must be a number');
-      }
-
-      sum = (sum * 10) + digit;
+    if (dv == null) {
+      throw ArgumentError('Invalid check digit');
     }
 
-    final dv = checkDigit(data.substring(0, 9));
-
-    return dv == sum;
+    return dv == checkDigit(data.substring(0, 9));
   }
 
   @override

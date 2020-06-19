@@ -41,7 +41,7 @@ void main() {
   test('Obtaining Check Digit & Validating', () {
     for (var i = 0; i < 1000; i++) {
       final n = '111111${i.toString().padLeft(3, '0')}';
-      final cd = cpf.checkDigit(n).toString().padLeft(2, '0');
+      final cd = cpf.checkDigitAsString(n);
       expect(cpf.validate('$n$cd'), true);
     }
   });

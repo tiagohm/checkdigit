@@ -35,7 +35,7 @@ void main() {
     for (var i = 0; i < 999; i++) {
       final bban = i.toString().padLeft(3, '0');
       final n = 'XX00$bban';
-      final cd = iban.checkDigit(n).toString().padLeft(2, '0');
+      final cd = iban.checkDigitAsString(n);
       expect(iban.validate('XX$cd$bban'), true);
     }
   });

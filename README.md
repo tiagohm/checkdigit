@@ -76,3 +76,11 @@ bool isValid = iban.validate('GB82WEST12345698765432');
 int checkDigit = iban.checkDigit('GB00WEST12345698765432');
 String checkDigitAsString = iban.checkDigitAsString('GB00WEST12345698765432');
 ```
+
+### [CNPJ](https://pt.wikipedia.org/wiki/Cadastro_Nacional_da_Pessoa_Jur%C3%ADdica)
+
+```dart
+bool isValid = cnpj.validate('11222333000181');
+int checkDigit = cnpj.checkDigit('112223330001');
+String checkDigitAsString = cnpj.checkDigitAsString('112223330001');
+```
