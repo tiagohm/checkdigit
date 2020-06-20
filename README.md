@@ -12,7 +12,7 @@ In `pubspec.yaml` add the following dependency:
 
 ```yaml
 dependencies:
-  checkdigit: ^0.1.0
+  checkdigit: ^0.2.0
 ```
 
 ## Algorithms
