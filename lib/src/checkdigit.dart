@@ -4,8 +4,8 @@ abstract class CheckDigit<T> {
   const CheckDigit();
 
   /// Validates the [data] integrity.
-  /// It assumes that the check digit is appended at end of [data].
-  bool validate(String data);
+  /// It assumes that the check digit is appended at end of the [data].
+  bool validate(String? data);
 
   /// Computes the check digit from [data].
   T checkDigit(String data);

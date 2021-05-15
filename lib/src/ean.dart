@@ -18,7 +18,7 @@ class Ean extends CheckDigit {
   final int n;
 
   ///
-  const Ean(this.n) : assert(n != null && n > 1);
+  const Ean(this.n) : assert(n > 1);
 
   static int _compute(
     String data, {
@@ -47,7 +47,7 @@ class Ean extends CheckDigit {
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length != n) {
       return false;
     }
@@ -57,7 +57,7 @@ class Ean extends CheckDigit {
 
   @override
   int checkDigit(String data) {
-    if (data == null || data.length != n - 1) {
+    if (data.length != n - 1) {
       throw ArgumentError('Must not be null and must contain ${n - 1} digits');
     }
 

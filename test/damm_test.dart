@@ -21,7 +21,6 @@ void main() {
   test('Invalid Input', () {
     expect(() => damm.validate('572O'), throwsA(isA<ArgumentError>()));
     expect(() => damm.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => damm.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(damm.validate(''), false);
     expect(damm.validate(null), false);
     expect(damm.validate('0'), false);

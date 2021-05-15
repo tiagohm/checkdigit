@@ -24,7 +24,6 @@ void main() {
   test('Invalid Input', () {
     expect(() => luhn.validate('7992789891O'), throwsA(isA<ArgumentError>()));
     expect(() => luhn.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => luhn.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(luhn.validate(''), false);
     expect(luhn.validate(null), false);
     expect(luhn.validate('0'), false);

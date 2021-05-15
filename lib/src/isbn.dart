@@ -33,7 +33,7 @@ class Isbn10 extends CheckDigit<int> {
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length != 10) {
       return false;
     }
@@ -43,7 +43,7 @@ class Isbn10 extends CheckDigit<int> {
 
   @override
   int checkDigit(String data) {
-    if (data == null || data.length != 9) {
+    if (data.length != 9) {
       throw ArgumentError('Must not be null and must contain 9 digits');
     }
 

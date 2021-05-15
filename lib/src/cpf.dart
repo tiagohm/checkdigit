@@ -10,9 +10,9 @@ class Cpf extends CheckDigit<int> {
   const Cpf();
 
   int _compute(
-    String data, {
+    String data,
     int factor,
-  }) {
+  ) {
     var sum = 0;
 
     for (var i = 0; i < data.length; i++) {
@@ -29,7 +29,7 @@ class Cpf extends CheckDigit<int> {
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length != 11) {
       return false;
     }
@@ -45,15 +45,15 @@ class Cpf extends CheckDigit<int> {
 
   @override
   int checkDigit(String data) {
-    if (data == null || data.length != 9) {
+    if (data.length != 9) {
       throw ArgumentError('Must not be null and must contain 9 digits');
     }
 
-    final sum1 = _compute(data, factor: 10);
+    final sum1 = _compute(data, 10);
     final r1 = sum1 % 11;
     final v1 = r1 == 0 || r1 == 1 ? 0 : (11 - r1);
 
-    final sum2 = _compute(data, factor: 11) + v1 * 2;
+    final sum2 = _compute(data, 11) + v1 * 2;
     final r2 = sum2 % 11;
     final v2 = r2 == 0 || r2 == 1 ? 0 : (11 - r2);
 

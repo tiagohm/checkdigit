@@ -32,7 +32,6 @@ void main() {
     expect(() => cpf.validate('36636384O51'), throwsA(isA<ArgumentError>()));
     expect(() => cpf.validate('4548505300O'), throwsA(isA<ArgumentError>()));
     expect(() => cpf.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => cpf.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(cpf.validate(''), false);
     expect(cpf.validate(null), false);
     expect(cpf.validate('0'), false);

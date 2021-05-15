@@ -43,7 +43,6 @@ void main() {
     expect(
         () => cnpj.validate('1122233300O180'), throwsA(isA<ArgumentError>()));
     expect(() => cnpj.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => cnpj.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(cnpj.validate(''), false);
     expect(cnpj.validate(null), false);
     expect(cnpj.validate('0'), false);

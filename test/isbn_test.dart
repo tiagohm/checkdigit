@@ -50,7 +50,6 @@ void main() {
       expect(
           () => isbn10.validate('03064O6152'), throwsA(isA<ArgumentError>()));
       expect(() => isbn10.checkDigit(''), throwsA(isA<ArgumentError>()));
-      expect(() => isbn10.checkDigit(null), throwsA(isA<ArgumentError>()));
       expect(isbn10.validate(''), false);
       expect(isbn10.validate(null), false);
       expect(isbn10.validate('0'), false);
@@ -89,7 +88,6 @@ void main() {
       expect(() => isbn13.validate('03066764O6152'),
           throwsA(isA<ArgumentError>()));
       expect(() => isbn13.checkDigit(''), throwsA(isA<ArgumentError>()));
-      expect(() => isbn13.checkDigit(null), throwsA(isA<ArgumentError>()));
       expect(isbn13.validate(''), false);
       expect(isbn13.validate(null), false);
       expect(isbn13.validate('0'), false);

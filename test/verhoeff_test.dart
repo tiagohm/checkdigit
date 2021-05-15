@@ -24,7 +24,6 @@ void main() {
   test('Invalid Input', () {
     expect(() => verhoeff.validate('805O'), throwsA(isA<ArgumentError>()));
     expect(() => verhoeff.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => verhoeff.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(verhoeff.validate(''), false);
     expect(verhoeff.validate(null), false);
     expect(verhoeff.validate('0'), false);

@@ -42,7 +42,7 @@ class Damm extends CheckDigit<int> {
   }
 
   @override
-  bool validate(String data) {
+  bool validate(String? data) {
     if (data == null || data.length < 2) {
       return false;
     }
@@ -52,7 +52,7 @@ class Damm extends CheckDigit<int> {
 
   @override
   int checkDigit(String data) {
-    if (data == null || data.isEmpty) {
+    if (data.isEmpty) {
       throw ArgumentError('Must not be null or empty');
     }
 

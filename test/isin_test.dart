@@ -21,7 +21,6 @@ void main() {
   test('Invalid Input', () {
     expect(() => isin.validate('US0378331*05'), throwsA(isA<ArgumentError>()));
     expect(() => isin.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => isin.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(isin.validate(''), false);
     expect(isin.validate(null), false);
     expect(isin.validate('0'), false);

@@ -24,7 +24,6 @@ void main() {
   test('Invalid Input', () {
     expect(() => iban.validate('US0378331*05'), throwsA(isA<ArgumentError>()));
     expect(() => iban.checkDigit(''), throwsA(isA<ArgumentError>()));
-    expect(() => iban.checkDigit(null), throwsA(isA<ArgumentError>()));
     expect(iban.validate('XX00'), false);
     expect(iban.validate(''), false);
     expect(iban.validate(null), false);

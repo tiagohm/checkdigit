@@ -39,11 +39,10 @@ class Iban extends CheckDigit<int> {
     return sum;
   }
 
-  @override
-
   /// Validates the [data] integrity.
   /// It assumes that the check digits start at index 2 of [data].
-  bool validate(String data) {
+  @override
+  bool validate(String? data) {
     if (data == null || data.length < 5) {
       return false;
     }
@@ -55,7 +54,7 @@ class Iban extends CheckDigit<int> {
 
   @override
   int checkDigit(String data) {
-    if (data == null || data.length < 5) {
+    if (data.length < 5) {
       throw ArgumentError(
         'Must not be null and must contain at least 5 digits',
       );
