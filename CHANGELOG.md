@@ -1,3 +1,6 @@
+## 0.3.0
+ - Null Safety support
+
 ## 0.2.0
  - Add `checkDigitAsString` method.
  - Add `CNPJ` and `EAN` algorithms.

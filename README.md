@@ -1,7 +1,6 @@
 # Checkdigit
 
 [![Star on GitHub](https://img.shields.io/github/stars/tiagohm/checkdigit.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/tiagohm/checkdigit)
-[![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 [![License: MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://opensource.org/licenses/MIT)
 
 A set of check digit algorithms used for error detection on identification numbers.
@@ -12,7 +11,7 @@ In `pubspec.yaml` add the following dependency:
 
 ```yaml
 dependencies:
-  checkdigit: ^0.2.0
+  checkdigit: ^0.3.0
 ```
 
 ## Algorithms
