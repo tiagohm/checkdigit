@@ -1,6 +1,6 @@
 name: checkdigit
 description: A set of check digit algorithms used for error detection on identification numbers.
-version: 0.3.0
+version: 0.3.1
 homepage: https://github.com/tiagohm/checkdigit
 
 environment:

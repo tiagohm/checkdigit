@@ -1,3 +1,6 @@
+## 0.3.1
+ - Fix [#3](https://github.com/tiagohm/checkdigit/issues/3)
+
 ## 0.3.0
  - Null Safety support
 
