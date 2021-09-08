@@ -4,6 +4,7 @@ export 'src/checkdigit.dart';
 export 'src/cnpj.dart';
 export 'src/cpf.dart';
 export 'src/damm.dart';
+export 'src/ean.dart';
 export 'src/iban.dart';
 export 'src/isbn.dart';
 export 'src/isin.dart';
